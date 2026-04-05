@@ -1,8 +1,147 @@
 body {
     background-color:#18151f;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 header {
     background-color:#18151f;
     height: 70px;
+}
+
+.hero {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 40px auto;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.hero-right {
+    display: flex;
+    flex: 1;
+    align-self: flex-start;
+    padding: 0 40px 40px;
+    height: 100%;
+}
+
+.hero-right h1 {
+    font-size: 3.5rem;
+    margin: 0 0 20px 0;
+    font-weight: bold;
+    background: linear-gradient(135deg, #71C4FF, #60496e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: baseline;
+}
+
+.hero-right p {
+    font-size: 25px;
+    line-height: 1.6;
+    color: #E2E8F0;
+    margin-top: 20px;
+}   
+
+.stack-section {
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 600px;
+}
+
+.stack-left {
+    align-items: flex-start;
+}
+
+.stack-copy {
+    max-width: 420px;
+    color: #E2E8F0;
+}
+
+.stack-copy h2 {
+    font-size: 2.2rem;
+    margin: 0 0 12px;
+}
+
+.stack-copy p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    color: #c7d2e1;
+}
+
+.stack-right {
+    padding: 0 16px 12px;
+}
+
+.stack-scroll .scroll-stack-inner {
+    padding: 2vh 1rem 8rem;
+}
+
+.stack-scroll .scroll-stack-card {
+    height: 13rem;
+    margin: 10px 0;
+    padding: 1.5rem;
+    border-radius: 22px;
+    color: #f8fbff;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25);
+}
+
+.stack-scroll .scroll-stack-card:nth-of-type(1) {
+    background: linear-gradient(135deg, #284b7d 0%, #2e78c7 100%);
+}
+
+.stack-scroll .scroll-stack-card:nth-of-type(2) {
+    background: linear-gradient(135deg, #5a356f 0%, #8b4cc0 100%);
+}
+
+.stack-scroll .scroll-stack-card:nth-of-type(3) {
+    background: linear-gradient(135deg, #2d5b4d 0%, #2f8c73 100%);
+}
+
+.stack-scroll .scroll-stack-card h2 {
+    margin: 0 0 10px;
+    font-size: 1.7rem;
+}
+
+.stack-scroll .scroll-stack-card p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: rgba(248, 251, 255, 0.92);
+}
+
+.right-bt {
+    display: inline-flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+} 
+.right1, .right2, .right3{
+    width: 200px;
+    height: 150px;
+    margin-top: 20px;
+}
+.right1, .right3 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #E2E8F0;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: overline underline;
 }
