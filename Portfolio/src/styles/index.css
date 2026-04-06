@@ -77,10 +77,10 @@ header {
 }
 
 .stack-copy p {
-    font-size: 1rem;
     line-height: 1.7;
-    margin: 0;
     color: #c7d2e1;
+    font-size: 20px;
+    margin-top: 20px;
 }
 
 .stack-right {
@@ -102,15 +102,19 @@ header {
 }
 
 .stack-scroll .scroll-stack-card:nth-of-type(1) {
-    background: linear-gradient(135deg, #284b7d 0%, #2e78c7 100%);
+    background: linear-gradient(135deg, #4585df 0%, #2e78c7 100%);
 }
 
 .stack-scroll .scroll-stack-card:nth-of-type(2) {
-    background: linear-gradient(135deg, #5a356f 0%, #8b4cc0 100%);
+    background: linear-gradient(135deg, #be58f9 0%, #8b4cc0 100%);
 }
 
 .stack-scroll .scroll-stack-card:nth-of-type(3) {
-    background: linear-gradient(135deg, #2d5b4d 0%, #2f8c73 100%);
+    background: linear-gradient(135deg, #46937c 0%, #3fbe9d 100%);
+}
+
+.stack-scroll .scroll-stack-card:nth-of-type(4) {
+    background: linear-gradient(135deg, #186ef8 0%, #1235ff 100%);
 }
 
 .stack-scroll .scroll-stack-card h2 {
@@ -144,4 +148,46 @@ header {
     color: #E2E8F0;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-decoration: overline underline;
+}
+
+.revealed, .encrypted {
+    display: inline-block;
+    font-size: clamp(5rem, 10vw, 10rem);
+    font-weight: 900;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 0.95;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #5d6dffed;
+    -webkit-text-fill-color: #5d6dffed;
+    background: none;
+    -webkit-text-stroke: 0;
+    margin-top: 150px;
+}
+
+.techstack-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 10px auto 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.techstack-section .all-letters {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.techstack-section .card-grid {
+    width: min(100%, 54em);
+    margin-left: auto;
+    margin-right: auto;
 }

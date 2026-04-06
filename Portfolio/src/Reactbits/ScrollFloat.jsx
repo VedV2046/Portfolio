@@ -15,7 +15,7 @@ const ScrollFloat = ({
     ease = 'back.inOut(2)',
     scrollStart = 'center bottom+=50%',
     scrollEnd = 'bottom bottom-=40%',
-    stagger = 0.03
+    stagger = 0.03,
     }) => {
     const containerRef = useRef(null);
 
@@ -36,7 +36,7 @@ const ScrollFloat = ({
 
     const charElements = el.querySelectorAll('.char');
 
-    gsap.fromTo(
+    const tween = gsap.fromTo(
         charElements,
         {
             willChange: 'opacity, transform',
@@ -59,10 +59,21 @@ const ScrollFloat = ({
                 scroller,
                 start: scrollStart,
                 end: scrollEnd,
-                scrub: true
+                scrub: true,
+                onUpdate: self => {
+                    // Mark heading as clear once most of the reveal has completed.
+                    const isClear = self.progress >= 0.72;
+                    el.classList.toggle('is-clear', isClear);
+                }
             }
         }
     );
+
+    return () => {
+        el.classList.remove('is-clear');
+        if (tween.scrollTrigger) tween.scrollTrigger.kill();
+        tween.kill();
+    };
     }, [scrollContainerRef, animationDuration, ease, scrollStart, scrollEnd, stagger]);
 
     return (

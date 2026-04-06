@@ -1,21 +1,42 @@
 .scroll-float {
     overflow: hidden;
     min-height: 150px;
-    margin-top: 24px;
-    margin-bottom: 10px;
+    margin-top: 70px;
+    margin-bottom: 22px;
     text-align: center;
-    color: rgb(221, 189, 255);
+    color: #d8f2ff;
+    position: relative;
+    transition: filter 350ms ease, transform 350ms ease;
 }
 
 .scroll-float-text {
     display: inline-block;
-    font-size: clamp(10rem, 5vw, 40rem);
+    font-size: clamp(5.6rem, 16vw, 13rem);
     font-weight: 900;
     text-align: center;
-    line-height: 1.1;
-    letter-spacing: 0.04em;
+    line-height: 0.95;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #a35dffd5;
+    -webkit-text-fill-color: #a35dff97;
+    background: none;
+    -webkit-text-stroke: 0;
 }
 
 .char {
     display: inline-block;
+}
+
+.scroll-float.is-clear {
+    filter: drop-shadow(0 0 2px rgba(104, 186, 255, 0.45));
+    transform: translateY(-2px);
+}
+
+.pre-about-content {
+    transition: filter 360ms ease, opacity 360ms ease;
+}
+
+body:has(.scroll-float.is-clear) .pre-about-content {
+    filter: blur(8px) saturate(0.9) brightness(0.82);
+    opacity: 0.78;
 }
