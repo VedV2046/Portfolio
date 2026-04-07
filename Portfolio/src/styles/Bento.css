@@ -1,11 +1,21 @@
 .bento-container {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 20px;
+    gap: 10px;
     margin: 120px 80px;
+    margin-bottom: 0;
     align-items: stretch;
-
-    /* background-color: pink; */
+}
+:root {
+    --hue: 27;
+    --sat: 69%;
+    --white: hsl(0, 0%, 100%);
+    --purple-primary: rgba(132, 0, 255, 1);
+    --purple-glow: rgba(132, 0, 255, 0.2);
+    --purple-border: rgba(132, 0, 255, 0.8);
+    --border-color: #392e4e;
+    --background-dark: #060010;
+    color-scheme: light dark;
 }
 
 .bento-item {
@@ -22,6 +32,56 @@
     justify-content: flex-start;
     align-items: stretch;
     gap: 12px;
+}
+
+.magic-bento-card {
+    --glow-x: 50%;
+    --glow-y: 50%;
+    --glow-intensity: 0;
+    --glow-radius: 300px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    background: linear-gradient(160deg, #111827 0%, #0f172a 55%, #020617 100%);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.magic-bento-card::before,
+.magic-bento-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+}
+
+.magic-bento-card::before {
+    background: radial-gradient(
+        var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+        rgba(59, 130, 246, 0.4),
+        transparent 65%
+    );
+    opacity: calc(var(--glow-intensity) * 0.85);
+}
+
+.magic-bento-card::after {
+    background: radial-gradient(
+        calc(var(--glow-radius) * 0.6) circle at var(--glow-x) var(--glow-y),
+        rgba(125, 211, 252, 0.3),
+        transparent 70%
+    );
+    mix-blend-mode: screen;
+    opacity: calc(var(--glow-intensity) * 0.7);
+}
+
+.magic-bento-card {
+    border-color: rgba(125, 211, 252, calc(0.2 + var(--glow-intensity) * 0.65));
+    box-shadow: 0 0 30px rgba(56, 189, 248, calc(var(--glow-intensity) * 0.22));
+}
+
+.magic-bento-card > * {
+    position: relative;
+    z-index: 1;
 }
 .bento-title {
     font-size: 18px;
@@ -72,16 +132,9 @@
     background-color: none;
 }
 
-/* Keep outer cards aligned even when one card contains a nested .bento-item wrapper. */
-.bento-container > .bento-item {
-    margin: 0;
-}
-
-.bento-container > .bento-item > .bento-title {
-    margin: 0 0 12px;
-}
-
-.bento-container > .bento-item > .bento-item {
+.bento-container > .bento-item > .bento-item,
+.bento-container1 > .bento-item > .bento-item,
+.bento-container2 > .bento-item > .bento-item {
     background: transparent;
     color: inherit;
     padding: 0;
@@ -90,4 +143,66 @@
     height: auto;
     display: block;
     text-align: inherit;
+}
+
+.bento-container1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 10px;
+    margin: 20px 80px;
+    align-items: stretch;
+}
+
+.bento-container2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 20px 80px 80px;
+    align-items: stretch;
+}
+
+.work-card {
+    height: auto;
+    min-height: 250px;
+}
+
+.work-content {
+    height: auto;
+}
+
+.github-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    background-color: rgb(0, 42, 109);
+    width: fit-content;
+    padding: 3px 20px;
+    border-radius: 12px;
+}
+
+.github-title-logo {
+    width: 40px;
+    height: 40px;
+}
+
+.heatmap-link {
+    display: block;
+    border-radius: 10px;
+    border: 1px solid rgba(125, 211, 252, 0.2);
+    background: rgba(2, 6, 23, 0.55);
+    padding: 10px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.heatmap-link:hover {
+    border-color: rgba(125, 211, 252, 0.55);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
+}
+
+.github-heatmap {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
 }
