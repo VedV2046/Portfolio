@@ -30,6 +30,24 @@ function TechStack() {
     useEffect(() => {
         if (!sectionRef.current) return;
 
+        const pageContent = sectionRef.current.closest('.page-content');
+
+        const setPageBlurState = (isVisible) => {
+            pageContent?.classList.toggle('techstack-visible', isVisible);
+        };
+
+        const visibilityObserver = new IntersectionObserver(
+            ([entry]) => {
+                setPageBlurState(entry.isIntersecting && entry.intersectionRatio > 0.35);
+            },
+            {
+                threshold: [0, 0.35, 0.5, 1],
+                rootMargin: '-10% 0px -10% 0px'
+            }
+        );
+
+        visibilityObserver.observe(sectionRef.current);
+
         const spotlight = document.createElement('div');
         spotlight.className = 'global-spotlight';
         spotlight.style.cssText = `
@@ -138,6 +156,8 @@ function TechStack() {
         document.addEventListener('mouseleave', handleMouseLeave);
 
         return () => {
+            visibilityObserver.disconnect();
+            setPageBlurState(false);
             document.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('mouseleave', handleMouseLeave);
             spotlight.parentNode?.removeChild(spotlight);
