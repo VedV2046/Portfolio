@@ -1,9 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ScrollStack, { ScrollStackItem } from '../Reactbits/ScrollStack';
 
 function Stack() {
+	const sectionRef = useRef(null);
+	const [isVisible, setIsVisible] = useState(false);
+
+	useEffect(() => {
+		const section = sectionRef.current;
+		if (!section || isVisible) return;
+
+		const observer = new IntersectionObserver(
+			entries => {
+				if (entries[0]?.isIntersecting) {
+					setIsVisible(true);
+					observer.disconnect();
+				}
+			},
+			{
+				threshold: 0.22,
+				rootMargin: '0px 0px -10% 0px'
+			}
+		);
+
+		observer.observe(section);
+
+		return () => observer.disconnect();
+	}, [isVisible]);
+
 	return (
-		<section className="hero stack-section">
+		<section ref={sectionRef} className={`hero stack-section${isVisible ? ' is-visible' : ''}`}>
 			<div className="hero-left stack-left">
 				<div className="stack-copy">
 						<p>Coming from a B.Tech in Electronics & Telecommunication, I approach the web with an engineer’s mindset—focusing on efficiency, modular architecture, and low-level optimization.</p> 

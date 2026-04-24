@@ -7,6 +7,7 @@ import Hero from "./hero";
 import Stack from "./stack";
 import LogoLoop from '../Reactbits/LogoLoop';
 import ScrollFloat from '../Reactbits/ScrollFloat';
+import BlurText from '../Reactbits/BlurText';
 import TechStack from './techStack';
 import DarkVeil from '../Reactbits/Darkveil';
 import VerticalTimeline from './journey';
@@ -46,6 +47,10 @@ function App() {
         };
     }, []);
 
+    const handleAnimationComplete = () => {
+        console.log('Animation completed!');
+    };
+
     return (
         <div className="app-shell">
             <div className="darkveil-shell" aria-hidden="true">
@@ -81,7 +86,7 @@ function App() {
                 </div>
 
                 <ScrollFloat
-                    animationDuration={1.8}
+                    animationDuration={61.8}
                     ease='power2.out'
                     scrollStart='top 88%'
                     scrollEnd='top 25%'
@@ -91,7 +96,18 @@ function App() {
                 </ScrollFloat>
 
                 <Stack />
+
                 <TechStack />
+
+                <BlurText
+                text="JOURNEY"
+                delay={200}
+                animateBy="letters"
+                direction="top"
+                onAnimationComplete={handleAnimationComplete}
+                className="text-2xl mb-8"
+                />
+                
                 <VerticalTimeline layout="1-column" lineColor="#7000f9">
                     <VerticalTimeline.Item date="2011-2022" title="Schooling" subtitle="Sinhgad Spring Dale Public School (SSDPS)" description="Completed my primary and secondary education with a focus on science and mathematics.My academic journey at SSDPS provided a strong foundation for my analytical and technical skills." />
                     <VerticalTimeline.Item date="2024-2028" title="B.Tech Electronics And Telecommunications (ENTC)" subtitle="Smt. Kashibai Navale College of Engineering (SKNCOE)" description="Currently pursuing a degree in ENTC, where I bridge the gap between hardware fundamentals and modern software solutions. Since 2025, I have specialized in full-stack web development, mastering HTML, CSS, and JavaScript to build responsive, user-centric applications and intuitive digital experiences." />

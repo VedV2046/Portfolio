@@ -74,6 +74,24 @@ header {
     padding: 40px 20px;
     max-width: 1400px;
     margin: 40px auto;
+    animation: hero-slide-in 3s ease-out 2s both;
+    will-change: transform, opacity;
+}
+
+.hero.stack-section {
+    animation: none;
+}
+
+@keyframes hero-slide-in {
+    0% {
+        opacity: 0;
+        transform: translate3d(24px, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
 }
 
 .hero-left {
@@ -120,6 +138,15 @@ header {
 
 .stack-left {
     align-items: flex-start;
+    opacity: 0;
+    transform: translate3d(-44px, 0, 0);
+    transition: transform 0.8s ease-out 1.2s, opacity 700ms ease-out 1.5s;
+    will-change: transform, opacity;
+}
+
+.stack-section.is-visible .stack-left {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 
 .stack-copy {
@@ -141,6 +168,15 @@ header {
 
 .stack-right {
     padding: 0 16px 12px;
+    opacity: 0;
+    transform: translate3d(44px, 0, 0);
+    transition: transform 0.8s ease-out 1.2s, opacity 700ms ease-out 1.5s;
+    will-change: transform, opacity;
+}
+
+.stack-section.is-visible .stack-right {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 
 .stack-scroll .scroll-stack-inner {

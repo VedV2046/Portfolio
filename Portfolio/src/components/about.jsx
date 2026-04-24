@@ -13,7 +13,7 @@ function About() {
                 text="Hello, I'm Ved Vharamble"
                 className="text-2xl font-semibold text-center"
                 style={{ fontSize: 'clamp(2.5rem, 4vw, 3.0rem)', lineHeight: 1.1, fontWeight: 700 }}
-                delay={90}
+                delay={220}
                 duration={1.5}
                 ease="elastic.out(1, 0.3)"
                 splitType="chars"
