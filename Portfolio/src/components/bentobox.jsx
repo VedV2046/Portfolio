@@ -20,7 +20,7 @@ import lightroomLogo from '../assets/lightroomclassic-logo.svg';
 
 function BentoBox() {
     return(
-        <div>
+        <div className="bento-reveal">
             <div className="bento-container">
 
                 <div className="bento-item magic-bento-card">

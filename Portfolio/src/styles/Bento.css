@@ -79,6 +79,53 @@
     box-shadow: 0 0 30px rgba(56, 189, 248, calc(var(--glow-intensity) * 0.22));
 }
 
+.bento-reveal .magic-bento-card {
+    opacity: 0;
+    transform: translate3d(0, 64px, 0);
+    transition: none;
+}
+
+.page-content.techstack-visible .bento-reveal .magic-bento-card {
+    animation: bento-slide-in 1s ease-out forwards;
+    animation-delay: var(--bento-delay, 0ms);
+}
+
+.bento-container .magic-bento-card:nth-of-type(1) {
+    --bento-delay: 200ms;
+}
+
+.bento-container .magic-bento-card:nth-of-type(2) {
+    --bento-delay: 500ms;
+}
+
+.bento-container .magic-bento-card:nth-of-type(3) {
+    --bento-delay: 800ms;
+}
+
+.bento-container1 .magic-bento-card:nth-of-type(1) {
+    --bento-delay: 1100ms;
+}
+
+.bento-container1 .magic-bento-card:nth-of-type(2) {
+    --bento-delay: 1400ms;
+}
+
+.bento-container2 .magic-bento-card:nth-of-type(1) {
+    --bento-delay: 1700ms;
+}
+
+@keyframes bento-slide-in {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 64px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
 .magic-bento-card > * {
     position: relative;
     z-index: 1;

@@ -32,13 +32,12 @@ function TechStack() {
 
         const pageContent = sectionRef.current.closest('.page-content');
 
-        const setPageBlurState = (isVisible) => {
-            pageContent?.classList.toggle('techstack-visible', isVisible);
-        };
-
         const visibilityObserver = new IntersectionObserver(
             ([entry]) => {
-                setPageBlurState(entry.isIntersecting && entry.intersectionRatio > 0.35);
+                if (entry.isIntersecting && entry.intersectionRatio > 0.35) {
+                    pageContent?.classList.add('techstack-visible');
+                    visibilityObserver.unobserve(sectionRef.current);
+                }
             },
             {
                 threshold: [0, 0.35, 0.5, 1],
@@ -157,7 +156,6 @@ function TechStack() {
 
         return () => {
             visibilityObserver.disconnect();
-            setPageBlurState(false);
             document.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('mouseleave', handleMouseLeave);
             spotlight.parentNode?.removeChild(spotlight);
