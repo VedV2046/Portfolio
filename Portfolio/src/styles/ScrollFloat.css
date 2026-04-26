@@ -23,6 +23,18 @@
     -webkit-text-stroke: 0;
 }
 
+.scroll-float-text-secondary {
+    font-size: clamp(3.6rem, 10vw, 8.2rem);
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+/* "ACHIEVEMENTS & " is 15 chars, so CERTIFICATES starts at char 16. */
+.scroll-float-text-secondary .char:nth-child(n + 16) {
+    color: #6fe3b5;
+    -webkit-text-fill-color: #130081;
+}
+
 .char {
     display: inline-block;
 }

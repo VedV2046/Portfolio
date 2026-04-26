@@ -24,7 +24,7 @@ const updateCardGlowProperties = (card, mouseX, mouseY, glow, radius) => {
 };
 
 
-function TechStack() {
+function TechStack({ id }) {
     const sectionRef = useRef(null);
 
     useEffect(() => {
@@ -163,7 +163,7 @@ function TechStack() {
     }, []);
 
     return (
-        <div ref={sectionRef} className="techstack-bento-section">
+        <div id={id} ref={sectionRef} className="techstack-bento-section">
             <section className="techstack-section">
                 <DecryptedText
                     text="TECHSTACK"
