@@ -56,6 +56,48 @@
     box-shadow: 0 0 18px rgba(253, 157, 22, 0.749);
 }
 
+@media (max-width: 768px) {
+    .port-header {
+        min-height: 72px;
+        height: auto;
+        padding: 10px 14px 12px;
+        background: rgba(14, 1, 56, 0.86);
+    }
+
+    .header-inner {
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            'name btn'
+            'nav nav';
+        gap: 10px 12px;
+        align-items: center;
+    }
+
+    .header-name {
+        grid-area: name;
+        font-size: 0.86rem;
+        letter-spacing: 0.05em;
+    }
+
+    .header-nav-wrap {
+        grid-area: nav;
+        justify-self: stretch;
+        width: 100%;
+    }
+
+    .port-header .pill-nav-container {
+        width: 100%;
+    }
+
+    .header-contact-btn {
+        grid-area: btn;
+        justify-self: end;
+        font-size: 0.72rem;
+        padding: 0.45rem 0.75rem;
+        white-space: nowrap;
+    }
+}
+
 @media (max-width: 920px) {
     .header-inner {
         grid-template-columns: auto 1fr auto;

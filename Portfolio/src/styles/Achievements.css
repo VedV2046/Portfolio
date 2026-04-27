@@ -126,3 +126,65 @@
     color: var(--ach-text-primary);
     text-align: center;
 }
+
+@media (max-width: 900px) {
+    .achievements-container,
+    .second-container {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .achievement-card {
+        height: auto;
+        padding: 22px;
+    }
+
+    .count-up-text,
+    .count-up-plus {
+        font-size: clamp(4rem, 14vw, 6rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .achievements-container,
+    .second-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin: 16px 14px 0;
+    }
+
+    .second-container {
+        margin-top: 16px;
+    }
+
+    .achievement-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .achievement-header {
+        gap: 12px;
+    }
+
+    .achievement-card h5 {
+        margin-top: 10px;
+    }
+
+    .achievement-card p {
+        font-size: 0.95rem;
+    }
+
+    .achievement-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .count-up-text,
+    .count-up-plus {
+        font-size: clamp(3rem, 18vw, 4.8rem);
+    }
+
+    .count-up-label {
+        font-size: 0.95rem;
+    }
+}

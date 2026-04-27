@@ -358,3 +358,176 @@ div[id] {
 .text-type__cursor--hidden {
     display: none;
 }
+
+@media (max-width: 1024px) {
+    .page-content {
+        padding-top: 84px;
+    }
+
+    .hero,
+    .stack-section {
+        width: min(100%, 1000px);
+        margin: 28px auto;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .hero-right h1 {
+        font-size: clamp(2.3rem, 5vw, 3.2rem);
+    }
+
+    .hero-right p {
+        font-size: 1.1rem;
+    }
+
+    .stack-copy p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        --webkit-text-size-adjust: 100%;
+    }
+
+    .page-content {
+        padding-top: 78px;
+    }
+
+    section[id],
+    div[id] {
+        scroll-margin-top: 88px;
+    }
+
+    .hero,
+    .stack-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+        margin: 18px auto;
+        padding: 16px 14px;
+    }
+
+    .hero-left,
+    .hero-right,
+    .stack-left,
+    .stack-right {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        align-self: stretch;
+    }
+
+    .hero-right {
+        align-self: center;
+        padding-bottom: 0;
+    }
+
+    .hero-right h1,
+    .hero-right p,
+    .stack-copy,
+    .stack-copy p {
+        text-align: center;
+    }
+
+    .hero-right h1 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+        margin-bottom: 14px;
+    }
+
+    .hero-right p {
+        font-size: 1rem;
+        line-height: 1.55;
+        margin-top: 14px;
+    }
+
+    .stack-section {
+        height: auto;
+    }
+
+    .stack-copy {
+        max-width: none;
+    }
+
+    .stack-copy h2 {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+    }
+
+    .stack-copy p {
+        font-size: 0.98rem;
+        line-height: 1.65;
+    }
+
+    .stack-scroll .scroll-stack-inner {
+        padding: 1rem 1rem 4rem;
+    }
+
+    .stack-scroll .scroll-stack-card {
+        height: auto;
+        min-height: 11rem;
+        margin: 14px 0;
+        padding: 1.2rem;
+        border-radius: 24px;
+    }
+
+    .stack-scroll .scroll-stack-card h2 {
+        font-size: 1.35rem;
+    }
+
+    .stack-scroll .scroll-stack-card p {
+        font-size: 0.95rem;
+    }
+
+    .right-bt {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .right1,
+    .right2,
+    .right3 {
+        width: auto;
+        height: auto;
+        margin-top: 0;
+    }
+
+    .right1,
+    .right3 {
+        font-size: clamp(1.8rem, 7vw, 2.8rem);
+        text-decoration-thickness: 2px;
+    }
+
+    .revealed,
+    .encrypted {
+        font-size: clamp(2.8rem, 11vw, 5rem);
+        margin-top: 90px;
+        letter-spacing: 0.08em;
+    }
+
+    .text-type {
+        font-size: clamp(2.6rem, 11vw, 5rem);
+        margin-top: 96px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero,
+    .stack-section {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .hero-right p,
+    .stack-copy p {
+        font-size: 0.94rem;
+    }
+
+    .text-type {
+        margin-top: 72px;
+    }
+
+    .revealed,
+    .encrypted {
+        margin-top: 72px;
+    }
+}

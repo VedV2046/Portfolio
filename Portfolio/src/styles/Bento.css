@@ -253,3 +253,49 @@
     height: auto;
     border-radius: 6px;
 }
+
+@media (max-width: 900px) {
+    .bento-container,
+    .bento-container1,
+    .bento-container2 {
+        grid-template-columns: 1fr;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .bento-item {
+        height: auto;
+        min-height: 180px;
+        margin: 0;
+    }
+
+    .bento-logo-container,
+    .bento-logo-title {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-container,
+    .bento-container1,
+    .bento-container2 {
+        margin-left: 12px;
+        margin-right: 12px;
+        gap: 12px;
+    }
+
+    .bento-item {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .bento-title {
+        font-size: 1rem;
+    }
+
+    .bento-logo {
+        width: 32px;
+        height: 32px;
+    }
+}
