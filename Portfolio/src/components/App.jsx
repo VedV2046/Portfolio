@@ -17,6 +17,7 @@ import Project from './project';
 import Achievements from './achievements';
 import ContactSection from './contactSection';
 import Footer from './footer';
+import Loader from './Loader';
 
 const techLogos = [
     { node: <SiNodedotjs color="#c0def3"/>, title: "Node.js" },
@@ -28,6 +29,7 @@ const techLogos = [
 ];
 
 function App() {
+    const [isInitialLoading, setIsInitialLoading] = useState(true);
     const projects = [
         {
             label: 'Pokedex',
@@ -65,6 +67,14 @@ function App() {
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
     useEffect(() => {
+        const timerId = window.setTimeout(() => {
+            setIsInitialLoading(false);
+        }, 3000);
+
+        return () => window.clearTimeout(timerId);
+    }, []);
+
+    useEffect(() => {
         const lenis = new Lenis({
             duration: 1.1,
             smoothWheel: true,
@@ -94,6 +104,10 @@ function App() {
     };
 
     const items = projects.map(project => ({ label: project.label }));
+
+    if (isInitialLoading) {
+        return <Loader />;
+    }
 
 
     return (
