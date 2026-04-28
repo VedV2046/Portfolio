@@ -32,12 +32,12 @@ function App() {
     const [isInitialLoading, setIsInitialLoading] = useState(true);
     const projects = [
         {
-            label: 'Pokedex',
-            title: 'Pokedex',
-            subtitle: 'Pokemon Explorer App',
-            description: 'A responsive app to search Pokemon, inspect stats, and browse types with smooth filtering and fast loading states.',
-            impactDescription: 'Engaged users with an interactive Pokedex that combines a sleek UI with seamless navigation, making it easy to explore and discover Pokemon details.',
-            tools: ['html', 'css', 'js']
+            label: 'Pokédex',
+            title: 'Pokédex',
+            subtitle: 'Pokémon Explorer App',
+            description: "A high-performance web application that merges the Pokémon API with an intelligent AI Agent. Users can instantly filter through generations or query the integrated AI for deep-dive stats, competitive analysis, and lore on any Pokémon, delivered via a sleek, responsive interface.",
+            impactDescription: "Bridged the gap between comprehensive data and interactive UI, allowing users to explore the Pokémon universe through a sleek, responsive interface backed by an AI-driven query engine for deep-dive stat inspections.",
+            tools: ['html', 'css', 'js', 'react']
         },
         {
             label: 'About',
