@@ -36,8 +36,8 @@ function App() {
             subtitle: 'Personal Finance Management Platform',
             description: 'Developed a full-stack web application for tracking income, expensesand financial activity with interactive analytics and smart spending insights.',
             impactDescription: 'Built a scalable finance management system with secure authentication, dynamic data visualization, database design and user-centric dashboard development helping users securely manage transactions an visualize financial trends.',
-            tools: ['react','html', 'css', 'js', 'Node.js', 'Express', 'PostgreSQL']
-            
+            url: 'https://smart-expense-tracker-20.vercel.app/',
+            tools: ['react','html', 'css', 'js', 'nodejs', 'express', 'postgresql']
         },
         {
             label: 'Pokédex',
