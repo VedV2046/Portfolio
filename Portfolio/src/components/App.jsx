@@ -34,7 +34,7 @@ function App() {
         {   label: 'Expense Tracker',
             title: 'Smart Expense Tracker',
             subtitle: 'Personal Finance Management Platform',
-            description: 'Developed a full-stack web application for tracking income, expensesand financial activity with interactive analytics and smart spending insights.',
+            description: 'Developed a full-stack web application for tracking income, expenses, and financial activity with interactive analytics and AI-driven spending insights. The platform enables users to securely manage transactions, visualize financial trends, and monitor savings through responsive dashboards and real-time data updates.',
             impactDescription: 'Built a scalable finance management system with secure authentication, dynamic data visualization, database design and user-centric dashboard development helping users securely manage transactions an visualize financial trends.',
             url: 'https://smart-expense-tracker-20.vercel.app/',
             tools: ['react','html', 'css', 'js', 'nodejs', 'express', 'postgresql']
@@ -45,6 +45,7 @@ function App() {
             subtitle: 'Pokémon Explorer App',
             description: "A high-performance web application that merges the Pokémon API with an intelligent AI Agent. Users can instantly filter through generations or query the integrated AI for deep-dive stats, competitive analysis, and lore on any Pokémon, delivered via a sleek, responsive interface.",
             impactDescription: "Bridged the gap between comprehensive data and interactive UI, allowing users to explore the Pokémon universe through a sleek, responsive interface backed by an AI-driven query engine for deep-dive stat inspections.",
+            url: 'https://ai-pokedex-v.vercel.app/',
             tools: ['html', 'css', 'js', 'react'] 
         },
         {
