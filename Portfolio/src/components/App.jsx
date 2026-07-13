@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react";
 import Lenis from 'lenis';
 import { SiReact, SiNodedotjs, SiJavascript, SiGit, SiPostgresql, SiExpress } from 'react-icons/si';
 
@@ -220,6 +220,7 @@ function App() {
                 </section>
 
                 <Footer />
+                <Analytics />
             </div>
         </div>
     );
