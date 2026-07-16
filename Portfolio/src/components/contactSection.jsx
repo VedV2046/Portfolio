@@ -5,6 +5,8 @@ import linkedinIcon from "../assets/linkedin.svg";
 import githubIcon from "../assets/github-logo.svg";
 import instagramIcon from "../assets/instagram.svg";
 
+import resume from "../../public//Ved_Vharamble_Resume.pdf";
+
 function ContactSection() {
     const contactLinks = [
         {
@@ -33,9 +35,8 @@ function ContactSection() {
                     I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. 
                     <p>Feel free to reach out and work together on something amazing!</p>
                 </div>
-                <a className="contact-mail" href="mailto:vharambleved@gmail.com">
-                    Reach Out
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-arrow-right arrow" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>
+                <a className="resume-button" href={resume} download="Ved_Vharamble_Resume.pdf">
+                    Download Resume
                 </a>
             </div>
 
@@ -81,10 +82,14 @@ function ContactSection() {
                         <div className="description-title">Location</div>
                         <div className="description-content">Pune</div>
                     </div>
-                    
                 </div>
+                <a className="contact-mail" href="mailto:vharambleved@gmail.com">
+                    Reach Out
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-arrow-right arrow" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>
+                </a>
             </div>
         </div>
+
     );
 }
 
