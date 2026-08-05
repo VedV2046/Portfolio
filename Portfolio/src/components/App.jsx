@@ -37,8 +37,17 @@ function App() {
             subtitle: 'Personal Finance Management Platform',
             description: 'Developed a full-stack web application for tracking income, expenses, and financial activity with interactive analytics and AI-driven spending insights. The platform enables users to securely manage transactions, visualize financial trends, and monitor savings through responsive dashboards and real-time data updates.',
             impactDescription: 'Built a scalable finance management system with secure authentication, dynamic data visualization, database design and user-centric dashboard development helping users securely manage transactions an visualize financial trends.',
-            url: 'https://smart-expense-tracker-20.vercel.app/',
+            url: 'https://fintrack-20.vercel.app/',
             tools: ['react','html', 'css', 'js', 'nodejs', 'express', 'postgresql']
+        },
+        {
+            label: 'ExploreX',
+            title: 'ExploreX',
+            subtitle: 'Location-Based Travel Discovery Platform',
+            description: 'Developed a full-stack travel discovery platform that enables users to explore attractions, restaurants, cafés, hospitals, parks, and other nearby places across cities worldwide. Integrated Geoapify APIs with a Flask backend to deliver real-time location data, multilingual place information, Google Maps navigation, and a responsive React interface.',
+            impactDescription: 'Built a scalable location-based search system featuring RESTful API integration, dynamic category filtering, multilingual support, interactive map navigation, and seamless React–Flask communication, delivering an intuitive and responsive travel planning experience.',
+            url: 'https://explorex-20.vercel.app/',
+            tools: ['react','html','css','js','python','flask','restAPI']
         },
         {
             label: 'Pokédex',
@@ -47,16 +56,8 @@ function App() {
             description: "A high-performance web application that merges the Pokémon API with an intelligent AI Agent. Users can instantly filter through generations or query the integrated AI for deep-dive stats, competitive analysis, and lore on any Pokémon, delivered via a sleek, responsive interface.",
             impactDescription: "Bridged the gap between comprehensive data and interactive UI, allowing users to explore the Pokémon universe through a sleek, responsive interface backed by an AI-driven query engine for deep-dive stat inspections.",
             url: 'https://ai-pokedex-v.vercel.app/',
-            tools: ['html', 'css', 'js', 'react'] 
-        },
-        {
-            label: 'Contact',
-            title: 'Contact Hub',
-            subtitle: 'Smart Contact Workflow',
-            description: 'A contact flow with validation, user feedback, and clean form UX to make inquiries easy and reliable across devices.',
-            impactDescription: 'Streamlined communication and increased engagement through an intuitive contact form with real-time validation and responsive design.',
-            tools: ['html', 'css', 'js', 'react']
-        },
+            tools: ['html', 'css', 'js', 'react', "restAPI"] 
+        },  
         {
             label: 'Project',
             title: 'Project Dashboard',

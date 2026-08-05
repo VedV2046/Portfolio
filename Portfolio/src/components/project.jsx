@@ -6,6 +6,9 @@ import reactLogo from "../assets/react-logo.svg";
 import nodeLogo from "../assets/nodejs-logo.svg";
 import expressLogo from "../assets/expressjs-logo.svg";
 import postgresLogo from "../assets/postgresql-logo.svg";
+import pythonLogo from "../assets/python-logo.svg";
+import flaskLogo from "../assets/flask-logo.svg";
+import restAPILogo from "../assets/rest-api-logo.svg";
 import "../styles/project.css";
 
 const toolIconMap = {
@@ -19,7 +22,9 @@ const toolIconMap = {
     express: { src: expressLogo, alt: "Express" },
     expressjs: { src: expressLogo, alt: "Express" },
     postgresql: { src: postgresLogo, alt: "PostgreSQL" },
-    postgres: { src: postgresLogo, alt: "PostgreSQL" }
+    python: { src: pythonLogo, alt: "Python" },
+    flask: { src: flaskLogo, alt: "Flask" },
+    restapi: { src: restAPILogo, alt: "RestAPI" },
 };
 
 const normalizeKey = (tool) => tool?.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
