@@ -46,7 +46,7 @@ function App() {
             subtitle: 'Location-Based Travel Discovery Platform',
             description: 'Developed a full-stack travel discovery platform that enables users to explore attractions, restaurants, cafés, hospitals, parks, and other nearby places across cities worldwide. Integrated Geoapify APIs with a Flask backend to deliver real-time location data, multilingual place information, Google Maps navigation, and a responsive React interface.',
             impactDescription: 'Built a scalable location-based search system featuring RESTful API integration, dynamic category filtering, multilingual support, interactive map navigation, and seamless React–Flask communication, delivering an intuitive and responsive travel planning experience.',
-            url: 'https://explorex-20.vercel.app/',
+            url: 'https://explorex-guide.vercel.app',
             tools: ['react','html','css','js','python','flask','restAPI']
         },
         {
