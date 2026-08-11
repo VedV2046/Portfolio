@@ -5,6 +5,11 @@ import linkedinIcon from "../assets/linkedin.svg";
 import instagramIcon from "../assets/instagram.svg";
 
 function Footer() {
+    const scrollToTop = (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return(
         <div className="footer-container"> 
             <div className="footer-content">
@@ -23,34 +28,35 @@ function Footer() {
                             <a href="#about"><ul className="ul-content">About</ul></a>
                             <a href="#techstack"><ul className="ul-content">Techstack</ul></a>
                             <a href="#journey"><ul className="ul-content">Journey</ul></a>
-                            <a href="#work"><ul className="ul-content">Work</ul></a>
+                            <a href="#projects"><ul className="ul-content">Projects</ul></a>
                             <a href="#contact"><ul className="ul-content">Contact</ul></a>
                         </ul>
                     </div>
-
                     <div className="socials">
                         <h5>Socials</h5>
                         <div className="footer-icon-box">
-                            <a href="https://github.com/VedV2046">
+                            <a href="https://github.com/VedV2046" target="_blank" rel="noopener noreferrer">
                                 <div className="footer-icon-container">
                                     <img src={githubIcon} alt="GitHub" className="footer-icon"/>    
                                 </div>
                             </a>
-                            <a href="https://www.linkedin.com/in/ved-vharamble/">
+                            <a href="https://www.linkedin.com/in/ved-vharamble/" target="_blank" rel="noopener noreferrer">
                                 <div className="footer-icon-container">
-                                    <img src={linkedinIcon} alt="GitHub" className="footer-icon"/>    
+                                    <img src={linkedinIcon} alt="LinkedIn" className="footer-icon"/>    
                                 </div>
                             </a>
-                            <a href="https://www.instagram.com/vedv_2046/">
+                            <a href="https://www.instagram.com/vedv_2046/" target="_blank" rel="noopener noreferrer">
                                 <div className="footer-icon-container">
-                                    <img src={instagramIcon} alt="GitHub" className="footer-icon"/>    
+                                    <img src={instagramIcon} alt="Instagram" className="footer-icon"/>    
                                 </div>
                             </a>
                         </div> 
                         <a href="mailto:vharambleved@gmail.com">vharambleved@gmail.com</a>
-                    </div> 
+                        <a href="#home" onClick={scrollToTop} className="return">
+                            <button className="return-button">Return to top ↑</button>
+                        </a>
+                    </div>
                 </div>
-
             </div>
         </div>
     );

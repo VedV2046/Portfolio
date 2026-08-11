@@ -42,7 +42,7 @@
 .footer-right {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     width: 50%;
     margin-left: 50px;
 
@@ -64,10 +64,9 @@ h5 {
 .socials {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-bottom: 100px;
+    gap: 16px;
 
-    a{
+    a {
         text-decoration: none; 
         color: white;
     }
@@ -88,6 +87,25 @@ h5 {
 }
 .footer-icon {
     width: 60%;
+}
+.return-button {
+    height: 40px;
+    width: 100%;
+
+    color: rgb(255, 255, 255);
+    background: none;
+    border: 1px solid orange;
+    border-radius: 40px; 
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 100px;
+    cursor: pointer;
+    display: inline-block;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.return:hover {
+    color: #ffffff;
+    transform: scale(1.02);
 }
 
 @media (max-width: 900px) {
