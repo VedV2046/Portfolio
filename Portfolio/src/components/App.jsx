@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Analytics } from "@vercel/analytics/react";
+import { LazyMotion, domAnimation } from 'framer-motion';
 import Lenis from 'lenis';
 import { SiReact, SiNodedotjs, SiJavascript, SiGit, SiPostgresql, SiExpress } from 'react-icons/si';
 
@@ -139,116 +140,118 @@ function App() {
 
 
     return (
-        <div className="app-shell">
-            <div className="darkveil-shell" aria-hidden="true">
-                <DarkVeil
-                    hueShift={0}
-                    noiseIntensity={0}
-                    scanlineIntensity={0}
-                    speed={1}
-                    scanlineFrequency={0}
-                    warpAmount={0}
-                />
-            </div>
-
-            <div className="page-content">
-                <Header />
-                <div className="pre-about-content" id="home">
-                    <Hero />
-
-                    <div style={{ height: '100px', position: 'relative', overflow: 'hidden' }}>
-                        <LogoLoop
-                            logos={techLogos}
-                            speed={100}
-                            direction="right"
-                            logoHeight={60}
-                            gap={60}
-                            hoverSpeed={0}
-                            scaleOnHover = {1.5}
-                            fadeOut
-                            fadeOutColor=""
-                            ariaLabel="Technology partners"
-                        />
-                    </div>
+        <LazyMotion features={domAnimation}>
+            <div className="app-shell">
+                <div className="darkveil-shell" aria-hidden="true">
+                    <DarkVeil
+                        hueShift={0}
+                        noiseIntensity={0}
+                        scanlineIntensity={0}
+                        speed={1}
+                        scanlineFrequency={0}
+                        warpAmount={0}
+                    />
                 </div>
 
-                <section id="about">
-                    <ScrollFloat
-                        animationDuration={61.8}
-                        ease='power2.out'
-                        scrollStart='top 88%'
-                        scrollEnd='top 25%'
-                        stagger={0.08}
-                    >
-                        ABOUT
-                    </ScrollFloat>
+                <div className="page-content">
+                    <Header />
+                    <div className="pre-about-content" id="home">
+                        <Hero />
 
-                    <Stack />
-
-                    <TechStack id="techstack"/>
-                </section>
-
-                <section id="journey">
-                    <BlurText
-                    text="JOURNEY"
-                    delay={200}
-                    animateBy="letters"
-                    direction="top"
-                    onAnimationComplete={handleAnimationComplete}
-                    className="text-2xl mb-8"
-                    />
-                    
-                    <VerticalTimeline layout="1-column" lineColor="#7000f9">
-                        <VerticalTimeline.Item date="2011-2022" title="Schooling" subtitle="Sinhgad Spring Dale Public School (SSDPS)" description="Completed my primary and secondary education with a focus on science and mathematics.My academic journey at SSDPS provided a strong foundation for my analytical and technical skills." />
-                        <VerticalTimeline.Item date="2024-2028" title="B.Tech Electronics And Telecommunications (ENTC)" subtitle="Smt. Kashibai Navale College of Engineering (SKNCOE)" description="Currently pursuing a degree in ENTC, where I bridge the gap between hardware fundamentals and modern software solutions. Since 2025, I have specialized in full-stack web development, mastering HTML, CSS, and JavaScript to build responsive, user-centric applications and intuitive digital experiences." />
-                        <VerticalTimeline.Item date="2025" title="Embracing Full-Stack Development" subtitle="Started as a curiosity which turned out to be awesome" description="By 2025, I expanded my skill set to include back-end technologies like Node.js and Express. This allowed me to create more complex applications and understand the full stack of web development, from databases to server-side logic." />
-                    </VerticalTimeline>
-                </section>
-
-                <section id="projects">
-                    <TextType 
-                        text={["PROJECTS"]}
-                        typingSpeed={75}
-                        pauseDuration={7000}
-                        showCursor
-                        cursorCharacter="|"
-                        texts={["Welcome to React Bits! Good to see you!","Build some amazing experiences!"]}
-                        deletingSpeed={0}
-                        variableSpeedEnabled={false}
-                        variableSpeedMin={60}
-                        variableSpeedMax={120}
-                        cursorBlinkDuration={0.5}
-                    />
-
-                    <div style={{ height: '70px', position: 'relative' }}>
-                        <GooeyNav
-                            items={items}
-                            particleCount={25}
-                            particleDistances={[70, 10]}
-                            particleR={100}
-                            initialActiveIndex={0}
-                            animationTime={600}
-                            timeVariance={300}
-                            colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-                            onItemChange={(_, index) => setSelectedProjectIndex(index)}
-                        />
+                        <div style={{ height: '100px', position: 'relative', overflow: 'hidden' }}>
+                            <LogoLoop
+                                logos={techLogos}
+                                speed={100}
+                                direction="right"
+                                logoHeight={60}
+                                gap={60}
+                                hoverSpeed={0}
+                                scaleOnHover = {1.5}
+                                fadeOut
+                                fadeOutColor=""
+                                ariaLabel="Technology partners"
+                            />
+                        </div>
                     </div>
 
-                    <Project key={projects[selectedProjectIndex].label} project={projects[selectedProjectIndex]} />
-                </section>
+                    <section id="about">
+                        <ScrollFloat
+                            animationDuration={61.8}
+                            ease='power2.out'
+                            scrollStart='top 88%'
+                            scrollEnd='top 25%'
+                            stagger={0.08}
+                        >
+                            ABOUT
+                        </ScrollFloat>
 
-                <section id="achievements">
-                    <Achievements />
-                </section>
+                        <Stack />
 
-                <section id="contact">
-                    <ContactSection />
-                </section>
+                        <TechStack id="techstack"/>
+                    </section>
 
-                <Footer />
-                <Analytics />
+                    <section id="journey">
+                        <BlurText
+                        text="JOURNEY"
+                        delay={200}
+                        animateBy="letters"
+                        direction="top"
+                        onAnimationComplete={handleAnimationComplete}
+                        className="text-2xl mb-8"
+                        />
+                        
+                        <VerticalTimeline layout="1-column" lineColor="#7000f9">
+                            <VerticalTimeline.Item date="2011-2022" title="Schooling" subtitle="Sinhgad Spring Dale Public School (SSDPS)" description="Completed my primary and secondary education with a focus on science and mathematics.My academic journey at SSDPS provided a strong foundation for my analytical and technical skills." />
+                            <VerticalTimeline.Item date="2024-2028" title="B.Tech Electronics And Telecommunications (ENTC)" subtitle="Smt. Kashibai Navale College of Engineering (SKNCOE)" description="Currently pursuing a degree in ENTC, where I bridge the gap between hardware fundamentals and modern software solutions. Since 2025, I have specialized in full-stack web development, mastering HTML, CSS, and JavaScript to build responsive, user-centric applications and intuitive digital experiences." />
+                            <VerticalTimeline.Item date="2025" title="Embracing Full-Stack Development" subtitle="Started as a curiosity which turned out to be awesome" description="By 2025, I expanded my skill set to include back-end technologies like Node.js and Express. This allowed me to create more complex applications and understand the full stack of web development, from databases to server-side logic." />
+                        </VerticalTimeline>
+                    </section>
+
+                    <section id="projects">
+                        <TextType 
+                            text={["PROJECTS"]}
+                            typingSpeed={75}
+                            pauseDuration={7000}
+                            showCursor
+                            cursorCharacter="|"
+                            texts={["Welcome to React Bits! Good to see you!","Build some amazing experiences!"]}
+                            deletingSpeed={0}
+                            variableSpeedEnabled={false}
+                            variableSpeedMin={60}
+                            variableSpeedMax={120}
+                            cursorBlinkDuration={0.5}
+                        />
+
+                        <div style={{ height: '70px', position: 'relative' }}>
+                            <GooeyNav
+                                items={items}
+                                particleCount={25}
+                                particleDistances={[70, 10]}
+                                particleR={100}
+                                initialActiveIndex={0}
+                                animationTime={600}
+                                timeVariance={300}
+                                colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+                                onItemChange={(_, index) => setSelectedProjectIndex(index)}
+                            />
+                        </div>
+
+                        <Project key={projects[selectedProjectIndex].label} project={projects[selectedProjectIndex]} />
+                    </section>
+
+                    <section id="achievements">
+                        <Achievements />
+                    </section>
+
+                    <section id="contact">
+                        <ContactSection />
+                    </section>
+
+                    <Footer />
+                    <Analytics />
+                </div>
             </div>
-        </div>
+        </LazyMotion>
     );
 }
 
