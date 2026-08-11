@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import '../styles/ProfileCard.css';
-import defaultAvatar from '../assets/profile-img1.png';
+import defaultAvatar from '../assets/profile-img1.webp';
 import codeTag from '../assets/code-tag.webp';
 import grainStructure from '../assets/grain.png';
 
