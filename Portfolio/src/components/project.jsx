@@ -34,54 +34,83 @@ function Project({ project }) {
         title: "Project Title",
         subtitle: "Project Subtitle",
         description: "Project description",
-        tools: ["html", "css", "js", "react"]
+        impactDescription: "Project impact description",
+        tools: ["html", "css", "js", "react"],
+        challenges: ["API integration", "Data handling"]
     };
+
+    const challengesList = Array.isArray(activeProject.challenges)
+        ? activeProject.challenges
+        : typeof activeProject.challenges === 'string'
+        ? activeProject.challenges.split(/(?=[A-Z][a-z])|\n|•|;|–/).map(s => s.trim()).filter(Boolean)
+        : [];
 
     return (
         <div className="container project-card project-card--enter">
-        <div className="content">
             <div className="project-title">
-                <h1>{activeProject.title}</h1>
-                {activeProject.url ? (
-                    <a href={activeProject.url} target="_blank" rel="noopener noreferrer">
-                        <button className="view-button">
-                            <div className="btn-name">View</div>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-box-arrow-up-right" viewBox="0 0 16 16"><path fillRule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/><path fillRule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/></svg> 
-                        </button>
-                    </a>
-                ) : (
-                    <button className="view-button" disabled>
-                        <div className="btn-name">View</div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-box-arrow-up-right" viewBox="0 0 16 16"><path fillRule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5"/><path fillRule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z"/></svg> 
-                    </button>
-                )}
+                {activeProject.title}
             </div>
             <div className="project-subtitle">
                 <h2>{activeProject.subtitle}</h2>
             </div>
-            <div className="project-description">
-                <div>{activeProject.description}</div>
-            </div>
-            <div className="impact">
-                <div className="impact-title">Impact</div>
-                <div className="impact-description">{activeProject.impactDescription}</div>
-            </div>
-            <div className="product-tools">
-                {activeProject.tools.map(tool => {
-                    const key = normalizeKey(tool);
-                    const icon = toolIconMap[key];
-                    if (!icon) return null;
-
-                    return (
-                        <div className="img-container" key={tool}>
-                            <img className="icon-img" src={icon.src} alt={`${icon.alt} logo`} />
+            <div className="content">
+                <div className="content-left">
+                    <div className="project-description">
+                        <div className="description-title">Description</div>
+                        <div>{activeProject.description}</div>
+                    </div>
+                    {activeProject.impactDescription && (
+                        <div className="project-description">
+                            <div className="description-title">Impact</div>
+                            <div>{activeProject.impactDescription}</div>
                         </div>
-                    );
-                })}
-            </div>
+                    )}
+                    <div className="product-tools">
+                        {activeProject.tools?.map(tool => {
+                            const key = normalizeKey(tool);
+                            const icon = toolIconMap[key];
+                            if (!icon) return null;
+
+                            return (
+                                <div className="img-container" key={tool} title={icon.alt}>
+                                    <img className="icon-img" src={icon.src} alt={`${icon.alt} logo`} />
+                                    <span className="tooltip-text">{icon.alt}</span>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+                <div className="content-right">
+                    {challengesList.length > 0 && (
+                        <div className="project-description challenges-box">
+                            <div className="description-title">Challenges</div>
+                            <ul className="challenges-list">
+                                {challengesList.map((item, idx) => (
+                                    <li key={idx}>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+                    {activeProject.url && (
+                        <div className="project-action">
+                            <a href={activeProject.url} target="_blank" rel="noopener noreferrer" className="view-button">
+                                <span className="btn-name">View Project</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-arrow-right arrow" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>
+                            </a>
+                        </div>
+                    )}
+                    {activeProject.githubURL && (
+                        <div className="project-action">
+                            <a href={activeProject.githubURL} target="_blank" rel="noopener noreferrer" className="view-button">
+                                <span className="btn-name">View Github</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-arrow-right arrow" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>
+                            </a>
+                        </div>
+                    )}
+                </div>
+            </div>    
         </div>
-    </div>
     );
 }
 
-export default Project;
+export default Project;    

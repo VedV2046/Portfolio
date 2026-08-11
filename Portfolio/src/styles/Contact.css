@@ -159,7 +159,7 @@
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(231, 195, 49, 0.4);
 }
-.description-title {
+.email .description-title {
     font-size: 14px;
     color: #ffffff;
 }
@@ -272,7 +272,7 @@
         padding: 14px;
     }
 
-    .description-title {
+    .email .description-title {
         font-size: 0.8rem;
     }
 

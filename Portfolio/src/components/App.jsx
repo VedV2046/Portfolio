@@ -38,7 +38,14 @@ function App() {
             description: 'Developed a full-stack web application for tracking income, expenses, and financial activity with interactive analytics and AI-driven spending insights. The platform enables users to securely manage transactions, visualize financial trends, and monitor savings through responsive dashboards and real-time data updates.',
             impactDescription: 'Built a scalable finance management system with secure authentication, dynamic data visualization, database design and user-centric dashboard development helping users securely manage transactions an visualize financial trends.',
             url: 'https://fintrack-20.vercel.app/',
-            tools: ['react','html', 'css', 'js', 'nodejs', 'express', 'postgresql']
+            githubURL: 'https://github.com/VedV2046/Smart-Expense-Tracker',
+            tools: ['react','html', 'css', 'js', 'nodejs', 'express', 'postgresql'],
+            challenges: [
+                'Complex state management across multi-category transactions',
+                'Real-time data visualization and interactive financial charts',
+                'Secure user authentication and database query optimization',
+                'Building a responsive UI that works across different screen sizes without a component library'
+            ]
         },
         {
             label: 'ExploreX',
@@ -47,7 +54,15 @@ function App() {
             description: 'Developed a full-stack travel discovery platform that enables users to explore attractions, restaurants, cafés, hospitals, parks, and other nearby places across cities worldwide. Integrated Geoapify APIs with a Flask backend to deliver real-time location data, multilingual place information, Google Maps navigation, and a responsive React interface.',
             impactDescription: 'Built a scalable location-based search system featuring RESTful API integration, dynamic category filtering, multilingual support, interactive map navigation, and seamless React–Flask communication, delivering an intuitive and responsive travel planning experience.',
             url: 'https://explorex-guide.vercel.app',
-            tools: ['react','html','css','js','python','flask','restAPI']
+            githubURL: 'https://github.com/VedV2046/ExploreX-Project',
+            tools: ['react','html','css','js','python','flask','restAPI'],
+            challenges: [
+                'Frontend–backend API integration with Flask',
+                'Real-time location data handling via Geoapify API',
+                'Multilingual data translation and category filtering',
+                'Dynamic category filtering',
+                'Deployment and production debugging'
+            ]
         },
         {
             label: 'Pokédex',
@@ -56,7 +71,13 @@ function App() {
             description: "A high-performance web application that merges the Pokémon API with an intelligent AI Agent. Users can instantly filter through generations or query the integrated AI for deep-dive stats, competitive analysis, and lore on any Pokémon, delivered via a sleek, responsive interface.",
             impactDescription: "Bridged the gap between comprehensive data and interactive UI, allowing users to explore the Pokémon universe through a sleek, responsive interface backed by an AI-driven query engine for deep-dive stat inspections.",
             url: 'https://ai-pokedex-v.vercel.app/',
-            tools: ['html', 'css', 'js', 'react', "restAPI"] 
+            githubURL: 'https://github.com/VedV2046/AI-Pokedex',
+            tools: ['html', 'css', 'js', 'react', "restAPI"],
+            challenges: [
+                'Asynchronous API requests from PokeAPI and AI services',
+                'Optimizing search and filtering performance for large datasets',
+                'Responsive dynamic stats visualization'
+            ]
         },  
         {
             label: 'Project',
@@ -64,7 +85,11 @@ function App() {
             subtitle: 'Task And Delivery Tracking',
             impactDescription: 'A project-centric dashboard to monitor milestones, update statuses, and keep engineering and design progress aligned.',
             description: 'A project-centric dashboard to monitor milestones, update statuses, and keep engineering and design progress aligned.',
-            tools: ['html', 'css', 'js']
+            tools: ['html', 'css', 'js'],
+            challenges: [
+                'Designing an intuitive multi-column task flow',
+                'Status update synchronization across engineering and design teams'
+            ]
         }
     ];
     const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
@@ -195,7 +220,7 @@ function App() {
                         cursorBlinkDuration={0.5}
                     />
 
-                    <div style={{ height: '150px', position: 'relative' }}>
+                    <div style={{ height: '70px', position: 'relative' }}>
                         <GooeyNav
                             items={items}
                             particleCount={25}
