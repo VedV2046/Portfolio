@@ -4,7 +4,7 @@
     margin-top: 70px;
     margin-bottom: 22px;
     text-align: center;
-    color: #d8f2ff;
+    color: #a78bfa;
     position: relative;
     transition: filter 350ms ease, transform 350ms ease;
 }
@@ -17,10 +17,19 @@
     line-height: 0.95;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #a35dffd5;
-    -webkit-text-fill-color: #a35dff97;
+    color: #e9d5ff;
+    -webkit-text-fill-color: #6d28d9;
     background: none;
     -webkit-text-stroke: 0;
+    text-shadow: 0 0 20px rgba(109, 40, 217, 0.25);
+}
+
+.scroll-float-text-secondary {
+    font-size: clamp(3.6rem, 10vw, 8.2rem);
+    margin-top: 150px;
+    margin-bottom: 100px;
+    color: #f7f7f8;
+    -webkit-text-fill-color: #f7a935;
 }
 
 .scroll-float-text-secondary {
@@ -32,7 +41,7 @@
 /* "ACHIEVEMENTS & " is 15 chars, so CERTIFICATES starts at char 16. */
 .scroll-float-text-secondary .char:nth-child(n + 16) {
     color: #6fe3b5;
-    -webkit-text-fill-color: #130081;
+    -webkit-text-fill-color: #bcbed6;
 }
 
 .char {

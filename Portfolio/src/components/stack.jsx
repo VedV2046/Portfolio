@@ -33,8 +33,7 @@ function Stack() {
 				<div className="stack-copy">
 						<p>Coming from a B.Tech in Electronics & Telecommunication, I approach the web with an engineer’s mindset—focusing on efficiency, modular architecture, and low-level optimization.</p> 
 						<p>While I understand the hardware, my passion lies in the Full-Stack ecosystem, where I transform complex problems into seamless user experiences.</p>
-						<p>Currently obsessed with the shift from Web2 to Web3. I’m honing my skills in ICP and Motoko to bridge the gap between traditional web architecture and the decentralized future.</p>
-					
+						<p>My next frontier is cloud. I want to go beyond building great interfaces to deploying and scaling them end to end. The goal is to become a complete, full-stack engineer.</p>
 				</div>
 			</div>
 

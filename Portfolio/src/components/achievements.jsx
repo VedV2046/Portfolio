@@ -32,7 +32,7 @@ function Achievements() {
                     <div className="count-up-row">
                         <CountUp
                             from={0}
-                            to={20}
+                            to={70}
                             separator="," 
                             direction="up"
                             duration={2}

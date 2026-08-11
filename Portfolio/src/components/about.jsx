@@ -26,7 +26,7 @@ function About() {
                 showCallback
             />
 
-            <p className="myself">"Electronics Engineer by day, Web Architect by night. I specialize in crafting modern interfaces with React and exploring the future of the web through decentralized protocols. Constantly learning, forever building."</p>
+            <p className="myself">"Electronics Engineer by day, Web Architect by night. I specialize in crafting modern interfaces with React and am steadily expanding into cloud technologies because the best engineers never stop building."</p>
             
             <div className="right-bt">
                 <div className="right1">Imagine</div>
