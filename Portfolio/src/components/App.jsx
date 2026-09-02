@@ -143,14 +143,14 @@ function App() {
         <LazyMotion features={domAnimation}>
             <div className="app-shell">
                 <div className="darkveil-shell" aria-hidden="true">
-                    <DarkVeil
+                    {/* <DarkVeil
                         hueShift={0}
                         noiseIntensity={0}
                         scanlineIntensity={0}
                         speed={1}
                         scanlineFrequency={0}
                         warpAmount={0}
-                    />
+                    /> */}
                 </div>
 
                 <div className="page-content">
@@ -214,7 +214,6 @@ function App() {
                             pauseDuration={7000}
                             showCursor
                             cursorCharacter="|"
-                            texts={["Welcome to React Bits! Good to see you!","Build some amazing experiences!"]}
                             deletingSpeed={0}
                             variableSpeedEnabled={false}
                             variableSpeedMin={60}

@@ -1,11 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ScrollFloat from '../Reactbits/ScrollFloat';
 import CountUp from '../Reactbits/CountUp';
 import '../styles/ScrollFloat.css';
 import '../styles/Achievements.css';
 import achieveImg from "../assets/1st.svg";
+import udemyCert from "../../public/udemy-certificate.png";
+import googleCert from "../../public/google-cloud-certificate.png";
+import elvionCert from "../../public/elvion-hackathon.png";
 
 function Achievements() {
+    const [selectedCert, setSelectedCert] = useState(null);
+
+    const [showCerts, setShowCerts] = useState(false);
+
+    const certificates = [
+        {
+            title: "UDEMY - Full Stack Web Dev",
+            image: udemyCert,
+            description: "Comprehensive training in modern web architecture, focusing on building scalable, data-driven applications and implementing secure user authentication and server-side logic"
+        },
+        {
+            title: "Google Cloud Study Jams",
+            image: googleCert,
+            description: "Participated in Google Cloud Study Jams, gaining hands-on experience with cloud fundamentals, modern Google Cloud tools, and practical deployment workflows for real-world applications." 
+        },
+        {
+            title: "Elvion Hackathon Participation",
+            image: elvionCert,
+            description: "Participated in Google Cloud Study Jams, gaining hands-on experience with cloud fundamentals, modern Google Cloud tools, and practical deployment workflows for real-world applications." 
+        }
+    ];
+
     return (
         <div>
             <ScrollFloat
@@ -48,12 +73,71 @@ function Achievements() {
             <div className="second-container">
                 <div className="achievement-card">
                     <div className="achievement-header">
-                        <h1>Certification</h1>
+                        <h1>UDEMY - Full Stack Web Dev</h1>
+                        <button className="header-contact-btn" onClick={() => setSelectedCert(udemyCert)}>View</button>
                     </div>
-                    <h5>UDEMY - Full Stack Web Dev</h5>
+                        <h5>Certification</h5>
                     <p>Comprehensive training in modern web architecture, focusing on building scalable, data-driven applications and implementing secure user authentication and server-side logic</p>
                 </div>
             </div>
+            <div className="second-container">
+                <div className="achievement-card">
+                    <div className="achievement-header">
+                        <h1>Google Cloud Study Jams</h1>
+                        <button className="header-contact-btn" onClick={() => setSelectedCert(googleCert)}>View</button>
+                    </div>
+                    <h5>Certification</h5>
+                    <p>Participated in Google Cloud Study Jams, gaining hands-on experience with cloud fundamentals, modern Google Cloud tools, and practical deployment workflows for real-world applications.</p>
+                </div>
+            </div>
+            {selectedCert && (
+                <div className="modal-overlay" onClick={() => {
+                    setSelectedCert(null);
+                    setShowCerts(true);
+                }}>
+                    <div className="modal-box" onClick={e => e.stopPropagation()}>
+                        <button
+                            className="modal-close"
+                            onClick={() => {
+                                setSelectedCert(null);
+                                setShowCerts(true);
+                            }}
+                            aria-label="Close certificate"
+                        >
+                            ✕
+                        </button>
+                        <img src={selectedCert} alt="Certificate" />
+                    </div>
+                </div>
+            )}
+            <div className='view-more'>
+                <button className="header-contact-btn" onClick={() => setShowCerts(true)}>View More</button>
+            </div>
+            {showCerts && (
+            <div className="modal-overlay" onClick={() => setShowCerts(false)}>
+                <div className="modal-grid">
+                    <div className="cert-title">All Certificates</div>
+                    {certificates.map((certificate, index) => (
+                        <div className="certificate-box" key={`${certificate.title}-${index}`}>
+                            <div className="achievement-header">
+                                <h3>{certificate.title}</h3>
+                                <button
+                                    className="header-contact-btn"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setSelectedCert(certificate.image);
+                                        setShowCerts(false);
+                                    }}
+                                >
+                                    View
+                                </button>
+                            </div>
+                            <p>{certificate.description}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+            )}
         </div>
         
     );
