@@ -11,7 +11,6 @@ import LogoLoop from '../Reactbits/LogoLoop';
 import ScrollFloat from '../Reactbits/ScrollFloat';
 import BlurText from '../Reactbits/BlurText';
 import TechStack from './techStack';
-import DarkVeil from '../Reactbits/Darkveil';
 import VerticalTimeline from './journey';
 import GooeyNav from '../Reactbits/GooeyNav';
 import TextType from '../Reactbits/TextType';
@@ -142,17 +141,6 @@ function App() {
     return (
         <LazyMotion features={domAnimation}>
             <div className="app-shell">
-                <div className="darkveil-shell" aria-hidden="true">
-                    {<DarkVeil
-                        hueShift={0}
-                        noiseIntensity={0}
-                        scanlineIntensity={0}
-                        speed={1}
-                        scanlineFrequency={0}
-                        warpAmount={0}
-                    />}
-                </div>
-
                 <div className="page-content">
                     <Header />
                     <div className="pre-about-content" id="home">

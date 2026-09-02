@@ -9,6 +9,7 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] })
   ],
   build: {
+    minify: 'terser',
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
