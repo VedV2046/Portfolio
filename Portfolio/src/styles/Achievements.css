@@ -235,7 +235,7 @@
 
 .certificate-box h3 {
     margin: 0;
-    color: #f0ecff;
+    color: rgb(187, 128, 0);
     font-size: 1.05rem;
 }
 
@@ -245,6 +245,11 @@
     line-height: 1.5;
     font-size: 0.92rem;
 }
+
+.certificate-box:hover{
+    transform: scale(1.02);
+    transition: transform 300ms ease-in-out;
+} 
 
 @media (max-width: 900px) {
     .achievements-container,

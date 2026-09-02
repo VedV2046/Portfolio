@@ -7,6 +7,7 @@ import achieveImg from "../assets/1st.svg";
 import udemyCert from "../../public/udemy-certificate.png";
 import googleCert from "../../public/google-cloud-certificate.png";
 import elvionCert from "../../public/elvion-hackathon.png";
+import nxtCert from "../../public/nxtWave-certificate.png";
 
 function Achievements() {
     const [selectedCert, setSelectedCert] = useState(null);
@@ -38,17 +39,22 @@ function Achievements() {
         {
             title: "UDEMY - Full Stack Web Dev",
             image: udemyCert,
-            description: "Comprehensive training in modern web architecture, focusing on building scalable, data-driven applications and implementing secure user authentication and server-side logic"
+            description: "Completed Dr. Angela Yu's renowned 62-hour Full-Stack Web Development Bootcamp on Udemy, covering everything from frontend to backend development and building production-ready web applications."
         },
         {
             title: "Google Cloud Study Jams",
             image: googleCert,
-            description: "Participated in Google Cloud Study Jams, gaining hands-on experience with cloud fundamentals, modern Google Cloud tools, and practical deployment workflows for real-world applications." 
+            description: "Successfully completed all Skill Badges and Arcade Games in Google Cloud Study Jams 2025-26, organized by Google Developer Groups On Campus SKNCOE demonstrating consistent hands-on learning across core Google Cloud technologies." 
         },
         {
             title: "Elvion Hackathon Participation",
             image: elvionCert,
-            description: "Participated in Google Cloud Study Jams, gaining hands-on experience with cloud fundamentals, modern Google Cloud tools, and practical deployment workflows for real-world applications." 
+            description: "Participated in the Elvion 2026 Hackathon's Idea Submission Round, organized by the TECH Department at RMD Sinhgad School of Engineering, Warje — recognized for exceptional innovation and dedication under competitive conditions." 
+        },
+        {
+            title: "NXTWave AI Certificte",
+            image: nxtCert,
+            description: "Attended a workshop by AI expert Mr. Abhinav Devaguptapu on building Generative AI models, organized by NXTWave. Gained practical exposure to AI concepts essential for students in the modern tech era." 
         }
     ];
 
@@ -98,7 +104,7 @@ function Achievements() {
                         <button className="header-contact-btn" onClick={() => setSelectedCert(udemyCert)}>View</button>
                     </div>
                         <h5>Certification</h5>
-                    <p>Comprehensive training in modern web architecture, focusing on building scalable, data-driven applications and implementing secure user authentication and server-side logic</p>
+                    <p>Completed Dr. Angela Yu's renowned 62-hour Full-Stack Web Development Bootcamp on Udemy, covering everything from frontend to backend development and building production-ready web applications.</p>
                 </div>
             </div>
             <div className="second-container">
@@ -108,7 +114,7 @@ function Achievements() {
                         <button className="header-contact-btn" onClick={() => setSelectedCert(googleCert)}>View</button>
                     </div>
                     <h5>Certification</h5>
-                    <p>Participated in Google Cloud Study Jams, gaining hands-on experience with cloud fundamentals, modern Google Cloud tools, and practical deployment workflows for real-world applications.</p>
+                    <p>Successfully completed all Skill Badges and Arcade Games in Google Cloud Study Jams 2025-26, organized by Google Developer Groups On Campus SKNCOE demonstrating consistent hands-on learning across core Google Cloud technologies.</p>
                 </div>
             </div>
             {selectedCert && (
@@ -142,11 +148,12 @@ function Achievements() {
                     onClick={e => e.stopPropagation()}
                     onWheel={e => e.stopPropagation()}
                     onTouchMove={e => e.stopPropagation()}
+                    
                 >
+                    <button className="modal-close" onClick={() => setShowCerts(false)}>✕</button>
                     <div className="cert-title">All Certificates</div>
                     {certificates.map((certificate, index) => (
                         <div className="certificate-box" key={`${certificate.title}-${index}`}>
-                            <button className="modal-close" onClick={() => setShowCerts(false)}>✕</button>
                             <div className="achievement-header">
                                 <h3>{certificate.title}</h3>
                                 <button
