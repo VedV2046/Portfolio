@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ScrollFloat from '../Reactbits/ScrollFloat';
 import CountUp from '../Reactbits/CountUp';
 import '../styles/ScrollFloat.css';
@@ -12,6 +12,27 @@ function Achievements() {
     const [selectedCert, setSelectedCert] = useState(null);
 
     const [showCerts, setShowCerts] = useState(false);
+
+    useEffect(() => {
+        const isModalOpen = Boolean(selectedCert || showCerts);
+
+        if (isModalOpen) {
+            const previousBodyOverflow = document.body.style.overflow;
+            const previousHtmlOverflow = document.documentElement.style.overflow;
+
+            document.body.style.overflow = "hidden";
+            document.documentElement.style.overflow = "hidden";
+
+            return () => {
+                document.body.style.overflow = previousBodyOverflow;
+                document.documentElement.style.overflow = previousHtmlOverflow;
+            };
+        }
+
+        document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
+        return undefined;
+    }, [selectedCert, showCerts]);
 
     const certificates = [
         {
@@ -94,6 +115,7 @@ function Achievements() {
                 <div className="modal-overlay" onClick={() => {
                     setSelectedCert(null);
                     setShowCerts(true);
+                    
                 }}>
                     <div className="modal-box" onClick={e => e.stopPropagation()}>
                         <button
@@ -111,14 +133,20 @@ function Achievements() {
                 </div>
             )}
             <div className='view-more'>
-                <button className="header-contact-btn" onClick={() => setShowCerts(true)}>View More</button>
+                <button className="header-contact-btn" onClick={() => setShowCerts(true)}>View All</button>
             </div>
             {showCerts && (
             <div className="modal-overlay" onClick={() => setShowCerts(false)}>
-                <div className="modal-grid">
+                <div
+                    className="modal-grid"
+                    onClick={e => e.stopPropagation()}
+                    onWheel={e => e.stopPropagation()}
+                    onTouchMove={e => e.stopPropagation()}
+                >
                     <div className="cert-title">All Certificates</div>
                     {certificates.map((certificate, index) => (
                         <div className="certificate-box" key={`${certificate.title}-${index}`}>
+                            <button className="modal-close" onClick={() => setShowCerts(false)}>✕</button>
                             <div className="achievement-header">
                                 <h3>{certificate.title}</h3>
                                 <button
@@ -139,7 +167,6 @@ function Achievements() {
             </div>
             )}
         </div>
-        
     );
 }
 
