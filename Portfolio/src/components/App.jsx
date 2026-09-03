@@ -19,6 +19,7 @@ import Achievements from './achievements';
 import ContactSection from './contactSection';
 import Footer from './footer';
 import Loader from './Loader';
+import ParticlesBackground from './particle';
 
 const techLogos = [
     { node: <SiNodedotjs color="#c0def3"/>, title: "Node.js" },
@@ -141,6 +142,7 @@ function App() {
     return (
         <LazyMotion features={domAnimation}>
             <div className="app-shell">
+                <ParticlesBackground />
                 <div className="page-content">
                     <Header />
                     <div className="pre-about-content" id="home">
