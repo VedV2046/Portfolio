@@ -145,7 +145,11 @@
 }
 
 .modal-box img {
-    width: 100%;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: calc(90vh - 2rem);
+    object-fit: contain;
     border-radius: 8px;
 }
 

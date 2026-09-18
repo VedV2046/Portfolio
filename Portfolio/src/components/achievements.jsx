@@ -8,6 +8,7 @@ import udemyCert from "../../public/udemy-certificate.png";
 import googleCert from "../../public/google-cloud-certificate.png";
 import elvionCert from "../../public/elvion-hackathon.png";
 import nxtCert from "../../public/nxtWave-certificate.png";
+import simplicert from "../../public/simplilearn-cert.png";
 
 function Achievements() {
     const [selectedCert, setSelectedCert] = useState(null);
@@ -55,6 +56,11 @@ function Achievements() {
             title: "NXTWave AI Certificte",
             image: nxtCert,
             description: "Attended a workshop by AI expert Mr. Abhinav Devaguptapu on building Generative AI models, organized by NXTWave. Gained practical exposure to AI concepts essential for students in the modern tech era." 
+        },
+        {
+            title: "Python for Beginners - Simplilearn",
+            image: simplicert,
+            description: "Completed the Python for Beginners certification by Simplilearn, building a foundation in Python programming fundamentals and scripting essentials." 
         }
     ];
 
