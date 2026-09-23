@@ -81,15 +81,18 @@ function App() {
             ]
         },  
         {
-            label: 'Project',
-            title: 'Project Dashboard',
-            subtitle: 'Task And Delivery Tracking',
-            impactDescription: 'A project-centric dashboard to monitor milestones, update statuses, and keep engineering and design progress aligned.',
-            description: 'A project-centric dashboard to monitor milestones, update statuses, and keep engineering and design progress aligned.',
-            tools: ['html', 'css', 'js'],
+            label: 'CSVision',
+            title: 'CSVision',
+            subtitle: 'CSV Analyzer & Visualizer',
+            description: "A full-stack web application that analyzes any CSV file instantly. Upload a CSV and get automatic stats, distribution charts, and data insights powered by Python and Pandas. Features upload history saved to MongoDB and a fully dockerized architecture.",
+            impactDescription: "Transforms raw CSV data into meaningful visual insights instantly — no code needed. Built with a FastAPI backend, React frontend, and Pandas-powered analysis engine that auto-detects column types and generates appropriate charts.",
+            url: 'https://csvison-project.vercel.app',
+            githubURL: 'https://github.com/VedV2046/CSVison-Project',
+            tools: ['react', 'python', 'fastapi', 'pandas', 'matplotlib', 'mongodb', 'docker'],
             challenges: [
-                'Designing an intuitive multi-column task flow',
-                'Status update synchronization across engineering and design teams'
+                'Generating and encoding matplotlib charts as base64 for frontend rendering',
+                'Auto-detecting column types to choose between histograms and bar charts',
+                'Resolving Python 3.13 SSL compatibility issues with MongoDB Atlas'
             ]
         }
     ];

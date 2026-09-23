@@ -9,6 +9,11 @@ import postgresLogo from "../assets/postgresql-logo.svg";
 import pythonLogo from "../assets/python-logo.svg";
 import flaskLogo from "../assets/flask-logo.svg";
 import restAPILogo from "../assets/rest-api-logo.svg";
+import fastAPILogo from "../assets/fastapi-logo.svg";
+import pandasLogo from "../assets/pandas-logo.svg";
+import matplotlibLogo from "../assets/matplotlib-logo.svg";
+import mongoDBLogo from "../assets/mongodb-logo.svg";
+import dockerLogo from "../assets/docker-logo.svg";
 import "../styles/project.css";
 
 const toolIconMap = {
@@ -25,6 +30,12 @@ const toolIconMap = {
     python: { src: pythonLogo, alt: "Python" },
     flask: { src: flaskLogo, alt: "Flask" },
     restapi: { src: restAPILogo, alt: "RestAPI" },
+    fastapi: { src: fastAPILogo, alt: "FastAPI" },
+    pandas: { src: pandasLogo, alt: "Pandas" },
+    matplotlib: { src: matplotlibLogo, alt: "Matplotlib" },
+    mongodb: { src: mongoDBLogo, alt: "MongoDB" },
+    mongo: { src: mongoDBLogo, alt: "MongoDB" },
+    docker: { src: dockerLogo, alt: "Docker" },
 };
 
 const normalizeKey = (tool) => tool?.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -105,7 +116,7 @@ function Project({ project }) {
                                 <span className="btn-name">View Github</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-arrow-right arrow" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>
                             </a>
-                        </div>
+                        </div>  
                     )}
                 </div>
             </div>    
