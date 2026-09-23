@@ -51,7 +51,8 @@
 }
 
 .gooey-nav-container nav ul li {
-  border-radius: 100vw;
+  border-radius: 0.7vw;
+  border: 1px solid rgb(97, 95, 95);
   position: relative;
   cursor: pointer;
   transition:

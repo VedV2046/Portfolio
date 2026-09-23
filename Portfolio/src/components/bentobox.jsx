@@ -15,7 +15,6 @@ import antigravityLogo from '../assets/antigravity-logo.svg';
 import vercelLogo from '../assets/vercel-logo.svg';
 import postmanLogo from '../assets/postman-logo.svg';
 import canvaLogo from '../assets/canva-logo.svg';
-import lightroomLogo from '../assets/lightroomclassic-logo.svg';
 
 
 function BentoBox() {
@@ -157,12 +156,6 @@ function BentoBox() {
                                     <img src={canvaLogo} alt="Canva Logo" className="bento-logo" />
                                 </div>
                                 <p className="bento-logo-text">Canva</p>
-                            </div>    
-                            <div className="logo-container">
-                                <div className="bento-img-container">
-                                    <img src={lightroomLogo} alt="Lightroom Logo" className="bento-logo" />
-                                </div>
-                                <p className="bento-logo-text">Lightroom</p>
                             </div>
                         </div>
                     </div>
